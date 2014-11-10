@@ -1,1 +1,97 @@
-Hello world
+<!DOCTYPE	html>
+<html>
+	<head>
+		<title>Jessie Douglas</title>
+		<link rel="stylesheet" href="index.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<script src="jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>Jessie Douglas</h1>
+				<h3>Web Developer</h3>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="linkedin.com/in/jessiedouglas">LinkedIn</a>
+					</li>
+					
+					<li>
+						<a href="github.com/jessiedouglas">GitHub</a>
+					</li>
+					
+					<li>
+						<a href="www.ratemypurrfessors.com">Project</a>
+					</li>
+					
+					<li>
+						<a href="https://docs.google.com/file/d/0B8d3JvtOdEJkWjVFMElnNEo4Y1k/edit">Resume</a>
+					</li>
+				</ul>
+			</nav>
+		
+		<main>
+			<nav class="tabs">
+				<h1 data-title="#about_me">About Me</h1>
+				<h1 data-title="#projects">Projects</h1>
+				<h1 data-title="#contact">Contact</h1>
+			</nav>
+			
+			<article>
+				<div id="about_me" class="active">
+					<h1>About Me</h1>
+					<p>
+						I am a web developer based in New York. Born and raised in the beautiful countryside of West Virginia, I attended 
+						Oberlin College, a small college located near Cleveland, OH, where I studied mathematics. After graduating, I moved to 
+						North Carolina to attend Duke University and pursue a career as a high school math teacher. It was while attending Duke
+						 that I took my first coding course and fell in love with it. After a year working as a full time teacher, I decided
+						 that teaching was not for me, and I came to New York to pursue my new-found love of computer programming. Although I
+						 am new to the profession, I am a quick learner and very excited to be in the field!
+					</p>
+					<p>
+						Make sure to check out my projects page to see some of the projects I have already built, and take a look at my resume!
+					</p>
+				</div>
+				<div id="projects">
+					<h1>Projects</h1>
+					<ul>
+						<li>
+							<h3>RateMyPurrfessors</h3>
+							<p>A clone of ratemyprofessors.com.</p>
+							<p>
+								Features include Backbone and Rails integration over the full website, custom AJAX queries for searches,
+								and polymorphic associations for up/down votes on professor ratings and college ratings.
+							</p>
+							<a href="www.ratemypurrfessors.com">Demo</a>
+							<a href="github.com/jessiedouglas/RateMyPurrfessors">Code</a>
+						</li>
+					</ul>
+				</div>
+				<div id="contact">
+					<h1>Contact</h1>
+					<p><span>Email:</span> JessieLou.Douglas@gmail.com</p>
+					<p><span>LinkedIn:</span> <a href="linkedin.com/in/jessiedouglas">linkedin.com/in/jessiedouglas</a></p>
+				</div>
+			</article>
+		</main>
+		
+		<script>
+			$(function () {
+				$("main").tabs();
+			});
+		</script>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-56606033-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>

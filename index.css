@@ -1,0 +1,11 @@
+nav.tabs > h1 {
+	cursor: pointer;
+}
+
+article > div:not(.active) {
+	display: none;
+}
+
+article > div.active {
+	display: block;
+}
