@@ -8,6 +8,12 @@ $.Tabs = function (el) {
 
 $.Tabs.prototype.switchTabs = function (event) {
 	event.preventDefault();
+	
+	if (this.transitioning) {
+		return
+	}
+	this.transitioning = true;
+	
 	var $currentTarget = $(event.currentTarget);
 	
 	var oldId = this.$active.data("title");
@@ -16,11 +22,22 @@ $.Tabs.prototype.switchTabs = function (event) {
 	var oldPage = this.$el.find(oldId);
 	var newPage = this.$el.find(newId);
 	
-	oldPage.removeClass("active");
-	newPage.addClass("active");
-	
 	this.$active.removeClass("active");
 	$currentTarget.addClass("active");
+
+	var that = this;
+	
+	//transition fade in/out
+	oldPage.removeClass("active").addClass("transitioning");
+	oldPage.one("transitionend", function () {
+		oldPage.removeClass("transitioning");
+		newPage.addClass("transitioning");
+		
+		setTimeout(function () {
+			newPage.removeClass("transitioning").addClass("active");
+			that.transitioning = false;
+		}, 0);
+	});
 	
 	this.$active = $currentTarget;
 }
@@ -28,11 +45,13 @@ $.Tabs.prototype.switchTabs = function (event) {
 $.Tabs.prototype.activateProjects = function (event) {
 	event.preventDefault();
 	var $currentTarget = $(event.currentTarget);
+	this.$active.removeClass("active");
 	
 	this.$el.find("div#about_me").removeClass("active");
 	this.$el.find("div#projects").addClass("active");
 	
 	this.$active = this.$el.find('h1[data-title="#projects"]');
+	this.$active.addClass("active");
 };
 
 $.fn.tabs = function () {

@@ -102,10 +102,14 @@ nav.tabs > h1 {
 	border-top: 1px solid #ccc;
 	text-align: center;
 	background: rgba(255, 255, 255, 0.7);
+	-webkit-transition: background 0.5s;
+	transition: background 0.5s;
 }
 
 nav.tabs > h1.active {
 	background: rgba(255, 255, 255, 1);
+	-webkit-transition: background 0.5s;
+	transition: background 0.5s;
 }
 
 nav.tabs > h1:not(.active):hover {
@@ -136,8 +140,16 @@ article > div:not(.active) {
 	display: none;
 }
 
+article > div.transitioning {
+	display: block;
+	opacity: 0;
+	transition: opacity 0.25s linear;
+}
+
 article > div.active {
 	display: block;
+	opacity: 1;
+	transition: opacity 0.25s linear;
 }
 
 /* about me */
