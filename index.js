@@ -1,6 +1,6 @@
 $.Tabs = function (el) {
 	this.$el = $(el);
-	this.$active = this.$el.find('h1[data-title="#about_me"]');
+	this.$active = this.$el.find('h1.active');
 	
 	$("nav.tabs").on("click", "h1", this.switchTabs.bind(this));
 	$("main").on("click", "a.projects", this.activateProjects.bind(this));
@@ -18,6 +18,9 @@ $.Tabs.prototype.switchTabs = function (event) {
 	
 	oldPage.removeClass("active");
 	newPage.addClass("active");
+	
+	this.$active.removeClass("active");
+	$currentTarget.addClass("active");
 	
 	this.$active = $currentTarget;
 }

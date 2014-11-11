@@ -12,7 +12,10 @@ html, body, header, main, p, h1, h3, img, a, span, ul, li, article, div, nav, se
 
 body {
 	font-family: sans-serif;
+	background: url("swirl_pattern.png");
+	height: 100%;
 }
+/* Background pattern from subtlepatterns.com */
 
 ul {
 	list-style: none;
@@ -29,6 +32,7 @@ ul {
 header {
 	min-width: 900px;
 	border-bottom: 1px solid #ccc;
+	background: rgba(255, 255, 255, 0.7);
 }
 
 header > div {
@@ -63,6 +67,11 @@ header > nav > ul > li > a {
 	display: block;
 	font-size: 18px;
 	padding: 35px 40px;
+	height: 100%;
+}
+
+header > nav > ul > li > a:hover {
+	text-decoration: underline;
 }
 
 /* MAIN */
@@ -92,6 +101,15 @@ nav.tabs > h1 {
 	padding: 15px 0;
 	border-top: 1px solid #ccc;
 	text-align: center;
+	background: rgba(255, 255, 255, 0.7);
+}
+
+nav.tabs > h1.active {
+	background: rgba(255, 255, 255, 1);
+}
+
+nav.tabs > h1:not(.active):hover {
+	background: rgba(220, 220, 220, 0.7);
 }
 
 /* Pages */
@@ -101,7 +119,9 @@ article {
 	border-bottom: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 	border-left: 1px solid #ccc;
-	min-height: 500px;
+	height: 550px;
+	overflow: auto;
+	background: #fff;
 }
 
 article > div {
@@ -146,11 +166,24 @@ div#about_me > p {
 
 div#about_me > p > a {
 	text-decoration: underline;
+	color: #447DD2;
+}
+
+div#about_me > p > a:hover {
+	color: #155DC7;
 }
 
 /* projects */
 div#projects {
 	
+}
+
+div#projects a {
+	color: #447DD2;
+}
+
+div#projects a:hover {
+	color: #155DC7;
 }
 
 div#projects > h1 {
@@ -184,13 +217,22 @@ li.project > a {
 	padding-right: 20px;
 }
 
+
 /* contact */
 div#contact {
 	
 }
 
+div#contact a {
+	color: #447DD2;
+}
+
+div#contact a:hover {
+	color: #155DC7;
+}
+
 div#contact > h1 {
-	padding-bottom: 30px;
+	padding-bottom: 50px;
 }
 
 div#contact > p {
